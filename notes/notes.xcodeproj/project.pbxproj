@@ -14,6 +14,7 @@
 		453FBDB52C3408B50087F934 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FBDB42C3408B50087F934 /* Note.swift */; };
 		453FBDBA2C3409840087F934 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FBDB92C3409840087F934 /* NoteViewModel.swift */; };
 		453FBDBC2C340E120087F934 /* CreateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FBDBB2C340E120087F934 /* CreateNoteView.swift */; };
+		453FBDBE2C3415660087F934 /* UpdateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453FBDBD2C3415660087F934 /* UpdateNoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		453FBDB42C3408B50087F934 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		453FBDB92C3409840087F934 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		453FBDBB2C340E120087F934 /* CreateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteView.swift; sourceTree = "<group>"; };
+		453FBDBD2C3415660087F934 /* UpdateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				453FBDA62C3408470087F934 /* ContentView.swift */,
 				453FBDBB2C340E120087F934 /* CreateNoteView.swift */,
+				453FBDBD2C3415660087F934 /* UpdateNoteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				453FBDBA2C3409840087F934 /* NoteViewModel.swift in Sources */,
 				453FBDA72C3408470087F934 /* ContentView.swift in Sources */,
 				453FBDA52C3408470087F934 /* notesApp.swift in Sources */,
+				453FBDBE2C3415660087F934 /* UpdateNoteView.swift in Sources */,
 				453FBDBC2C340E120087F934 /* CreateNoteView.swift in Sources */,
 				453FBDB52C3408B50087F934 /* Note.swift in Sources */,
 			);

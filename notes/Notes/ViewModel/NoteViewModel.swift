@@ -25,6 +25,7 @@ class NoteViewModel {
     func updateNoteWith(id: UUID, newTitle: String, newText: String?) {
         if let index = notes.firstIndex(where: {$0.id == id}) {
             let updateNote = Note(id: id, title: newTitle, text: newText, createdAt: notes[index].createdAt)
+            notes[index] = updateNote
         }
     }
     
