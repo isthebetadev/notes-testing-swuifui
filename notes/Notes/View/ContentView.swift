@@ -11,6 +11,8 @@ import SwiftData
 struct ContentView: View {
     
     var noteViewModel: NoteViewModel = .init()
+    
+    @State var showCreateNote: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -26,6 +28,21 @@ struct ContentView: View {
                     }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .status) {
+                    Button(action: { showCreateNote.toggle() }, label: {
+                        Label("Crear nota", systemImage: "square.and.pencil")
+                            .labelStyle(.titleAndIcon)
+                    })
+                    .buttonStyle(.bordered)
+                    .tint(.blue)
+                    .bold()
+                }
+            }
+            .navigationTitle("Notas")
+            .fullScreenCover(isPresented: $showCreateNote, content: {
+                CreateNoteView(noteViewModel: noteViewModel)
+            })
         }
     }
 
@@ -33,5 +50,9 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(noteViewModel: NoteViewModel())
+    ContentView(noteViewModel: .init(notes: [
+        .init(title: "Rutina de yoga", text: "Una rutina de 10 min para hacer por la mañana.", createdAt: .now),
+        .init(title: "Clases del máster IA", text: "Cada semana se publica el horario en el calendario de la web.", createdAt: .now),
+        .init(title: "Libros pendientes 📚", text: "Listado de libros pendientes de leer...", createdAt: .now)
+    ]))
 }
