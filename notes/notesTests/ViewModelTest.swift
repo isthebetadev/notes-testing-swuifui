@@ -40,8 +40,8 @@ final class ViewModelTest: XCTestCase {
         let newTitle = "New title"
         let newText = "New text"
         
-        if let id = viewModel.notes.first?.id {
-            viewModel.updateNoteWith(id: id, newTitle: newTitle, newText: newText)
+        if let identifier = viewModel.notes.first?.identifier {
+            viewModel.updateNoteWith(identifier: identifier, newTitle: newTitle, newText: newText)
             XCTAssertEqual(viewModel.notes.first?.title, newTitle)
             XCTAssertEqual(viewModel.notes.first?.text, newText)
         } else {
@@ -56,8 +56,8 @@ final class ViewModelTest: XCTestCase {
         
         viewModel.createNoteWith(title: title, text: text)
         
-        if let id = viewModel.notes.first?.id {
-            viewModel.deleteNoteWith(id: id)
+        if let identifier = viewModel.notes.first?.identifier {
+            viewModel.deleteNoteWith(identifier: identifier)
             XCTAssertTrue(viewModel.notes.isEmpty)
         } else {
             XCTFail("Error -> No note was created")
