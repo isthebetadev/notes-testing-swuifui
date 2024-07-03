@@ -10,7 +10,7 @@ import SwiftUI
 struct UpdateNoteView: View {
     
     var noteViewModel: NoteViewModel
-    let id: UUID
+    let identifier: UUID
     
     @State var title: String = ""
     @State var text: String = ""
@@ -26,7 +26,7 @@ struct UpdateNoteView: View {
                 }
             }
             Button(action: {
-                noteViewModel.deleteNoteWith(id: id)
+                noteViewModel.deleteNoteWith(identifier: identifier)
                 dismiss()
             }, label:{
                 Text("Eliminar nota")
@@ -39,7 +39,7 @@ struct UpdateNoteView: View {
         .toolbar {
             ToolbarItem() {
                 Button(action: {
-                    noteViewModel.updateNoteWith(id: id, newTitle: title, newText: text)
+                    noteViewModel.updateNoteWith(identifier: identifier, newTitle: title, newText: text)
                     dismiss()
                 }, label: {
                     Text("Actualizar")
@@ -51,6 +51,6 @@ struct UpdateNoteView: View {
 
 #Preview {
     NavigationStack {
-        UpdateNoteView(noteViewModel: .init(), id: .init(), title: "Titulo de prueba", text: "Esto es el texto de ejemplo de la nota.")
+        UpdateNoteView(noteViewModel: .init(), identifier: .init(), title: "Titulo de prueba", text: "Esto es el texto de ejemplo de la nota.")
     }
 }
