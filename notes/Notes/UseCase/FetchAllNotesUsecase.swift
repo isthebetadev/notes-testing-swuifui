@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct FetchAllNotesUsecase {
+protocol FetchAllNotesProtocol {
+    func fetchAll() throws -> [Note]
+}
+
+struct FetchAllNotesUsecase: FetchAllNotesProtocol {
     var notesDatabase: NotesDatabaseProtocol
     
     init(notesDatabase: NotesDatabaseProtocol = NotesDatabase.shared) {

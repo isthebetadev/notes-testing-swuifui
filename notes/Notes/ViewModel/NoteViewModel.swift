@@ -13,12 +13,12 @@ class NoteViewModel {
     
     var notes: [Note]
     
-    var createNoteUseCase: CreateNoteUsecase
-    var fetchAllNotesUseCase: FetchAllNotesUsecase
+    var createNoteUseCase: CreateNoteProtocol
+    var fetchAllNotesUseCase: FetchAllNotesProtocol
     
-    init(notes: [Note] = [], createNoteUseCase:
-         CreateNoteUsecase = CreateNoteUsecase(),
-         fetchAllNotesUseCase: FetchAllNotesUsecase = FetchAllNotesUsecase()) {
+    init(notes: [Note] = [], 
+         createNoteUseCase: CreateNoteProtocol = CreateNoteUsecase(),
+         fetchAllNotesUseCase: FetchAllNotesProtocol = FetchAllNotesUsecase()) {
         self.notes = notes
         self.createNoteUseCase = createNoteUseCase
         self.fetchAllNotesUseCase = fetchAllNotesUseCase

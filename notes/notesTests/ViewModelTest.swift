@@ -9,25 +9,45 @@ import XCTest
 
 @testable import notes
 
+var mockDatabase: [Note] = []
+
+struct CreateNoteUsecaseMock: CreateNoteProtocol {
+    func createNoteWith(title: String, text: String) throws {
+        let note =  Note(title: "title", text: "text", createdAt: .now)
+        mockDatabase.append(note)
+    }
+}
+
+struct FetchAllNotesUsecaseMock: FetchAllNotesProtocol {
+    func fetchAll() throws -> [notes.Note] {
+        return mockDatabase
+    }
+    
+    
+}
+
 final class ViewModelTest: XCTestCase {
 
     var viewModel: NoteViewModel!
     
     override func setUpWithError() throws {
-        viewModel = NoteViewModel()
+        viewModel = NoteViewModel(createNoteUseCase: CreateNoteUsecaseMock(),
+        fetchAllNotesUseCase: FetchAllNotesUsecaseMock())
     }
 
-    override func tearDownWithError() throws {}
+    override func tearDownWithError() throws {
+        mockDatabase = []
+    }
     
     func testCreateNote() {
-        let title = "Test title"
-        let text = "Test text"
+        let title = "title"
+        let text = "text"
 
         viewModel.createNoteWith(title: title, text: text)
         
         XCTAssertEqual(viewModel.notes.count, 1)
-        XCTAssertEqual(viewModel.notes.first?.text, "Test text")
-        XCTAssertEqual(viewModel.notes.first?.title, "Test title")
+        XCTAssertEqual(viewModel.notes.first?.text, "text")
+        XCTAssertEqual(viewModel.notes.first?.title, "title")
         
     }
    

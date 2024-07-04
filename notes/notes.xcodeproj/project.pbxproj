@@ -88,13 +88,13 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
-		45013AAB2C35B24F00D606CC /* Usecase */ = {
+		45013AAB2C35B24F00D606CC /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
 				45013AAC2C35B26A00D606CC /* CreateNoteUsecase.swift */,
 				45013AAE2C35B2DB00D606CC /* FetchAllNotesUsecase.swift */,
 			);
-			path = Usecase;
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		453FBD982C3408470087F934 = {
@@ -118,7 +118,7 @@
 		453FBDA32C3408470087F934 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				45013AAB2C35B24F00D606CC /* Usecase */,
+				45013AAB2C35B24F00D606CC /* UseCase */,
 				45013AAA2C35AE9F00D606CC /* Database */,
 				453FBDB82C3409470087F934 /* View */,
 				453FBDB72C34093D0087F934 /* ViewModel */,
